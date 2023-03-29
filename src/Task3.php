@@ -14,8 +14,12 @@ function insertUser($database, $data)
 
     // Task 3.2 complete the function body to insert the user
     // hint: use $database->query($sql) to execute the query
+   $result = $database->query($sql);
+	if($result)
+		return 'New record created successfully';
+	else
+		return false;
 }
-
 // example output :
 // 'New record created successfully' if the user was inserted successfully
 // false if the user was not inserted successfully
